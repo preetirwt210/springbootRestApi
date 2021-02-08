@@ -37,9 +37,9 @@ public class EmployeeController {
 		
 	}
 	
-	@GetMapping("/notes/{id}")
+	@GetMapping("/employees/{id}")
 	public ResponseEntity<Employee> getEmployeeById(@PathVariable(value="id")Long empid){
-		Employee emp= employeeDao.findOne(empid);
+	    Employee emp= employeeDao.getOne(empid);
 		if(emp==null) {
 			return ResponseEntity.notFound().build();
 		}
@@ -50,7 +50,7 @@ public class EmployeeController {
 	@PutMapping("/employees/{id}")
 	public ResponseEntity<Employee> updateEmployee(@PathVariable(value="id") Long empid,@Valid @RequestBody Employee empDetails){
 		
-		Employee emp=employeeDao.findOne(empid);
+		Employee emp=employeeDao.getOne(empid);
 		if(emp==null) {
 			return ResponseEntity.notFound().build();
 		}
@@ -66,7 +66,7 @@ public class EmployeeController {
 	@DeleteMapping("/employees/{id}")
 	public ResponseEntity<Employee> deleteEmployee(@PathVariable(value="id") Long empid){
 		
-		Employee emp=employeeDao.findOne(empid);
+		Employee emp=employeeDao.getOne(empid);
 		if(emp==null) {
 			return ResponseEntity.notFound().build();
 		}

@@ -1,6 +1,7 @@
 package com.springboot.springbootrestapiexample.dao;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,8 +25,8 @@ public class EmployeeDAO {
 		return employeeRepository.findAll();
 	}
 	
-	public Employee findOne(Long empid) {
-		return employeeRepository.findOne(empid);
+	public Employee getOne(Long empid) {
+		return employeeRepository.getOne(empid);
 		
 	}
 	

@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -25,16 +26,16 @@ public class Employee {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
-	@NotBlank
+	@NotNull
 	private String name;
 	
-	@NotBlank
+	@NotNull
 	private String designation;
 	
-	@NotBlank
+	@NotNull
 	private String expertise;
 	
-	@NotBlank
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	@LastModifiedDate
 	private Date CreatedAt;
