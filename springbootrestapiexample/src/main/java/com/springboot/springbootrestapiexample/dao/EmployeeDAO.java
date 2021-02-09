@@ -27,7 +27,6 @@ public class EmployeeDAO {
 	
 	public Employee getOne(Long empid) {
 		return employeeRepository.getOne(empid);
-		
 	}
 	
 	public void delete(Employee emp) {
